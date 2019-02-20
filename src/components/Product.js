@@ -21,7 +21,7 @@ export default class Product extends Component {
               {inCart?(
                 <span>In Cart</span>
               ):(
-                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                <i className="fa fa-cart-plus" aria-hidden="true"></i>
               )}
             </button>
           </div>
