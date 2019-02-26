@@ -47,7 +47,7 @@ export default class Details extends Component {
                     value.openModal(id);
                   }}
                   >
-                    {inCart?"In Cart":"Add to Cart"}
+                    {inCart?"In Cart":"Add to Cart "}
                   </button>
                 </div>
                 {/* end of right column */}

@@ -9,8 +9,8 @@ export default class ProductProvider extends Component {
       products:[],
       detailProduct,
       cart:[],
-      modalOpen:true,
-      modalProduct: detailProduct
+      modalOpen:false,
+      modalProduct: detailProduct,
   }
 
   componentDidMount(){
@@ -34,15 +34,12 @@ export default class ProductProvider extends Component {
   }
 
   addToCart = (id) =>{
-      // console.log("hello from addToCart", id)
       let tempProducts = [...this.state.products];
       let product = tempProducts.filter(product=>product.id === id);
       product = product[0];
       product.inCart = true;
       product.count = 1;
       product.total = product.price;
-      // console.log(product)
-      // const cart = [...this.state.cart, product];
       this.setState(()=>{
         return {
         products: tempProducts,
@@ -55,7 +52,8 @@ export default class ProductProvider extends Component {
   }
 
   openModal = id => {
-    const product = this.state.products.filter(product => product.id === id);
+    let product = this.state.products.filter(product => product.id === id);
+    product = product[0];
     this.setState(() => {
       return {modalProduct:product, modalOpen:true}
     })
