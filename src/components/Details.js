@@ -42,7 +42,10 @@ export default class Details extends Component {
                   </Link>
                   <button type="button" className="btn btn-outline-warning" 
                   disabled={inCart}
-                  onClick={()=>value.addToCart(id)}
+                  onClick={()=>{
+                    value.addToCart(id);
+                    value.openModal(id);
+                  }}
                   >
                     {inCart?"In Cart":"Add to Cart"}
                   </button>

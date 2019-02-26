@@ -9,12 +9,15 @@ export default class Product extends Component {
     return (
       <ProductConsumer>
         {value=>{
-          const {handleDetail} = value;
+          const {handleDetail, openModal} = value;
           return(
             <div className="col-9 mx-auto col-md-6 col-lg-3 mb-4">
               <div className="card text-left">
                 <div className="img-container img-thumbnail p-5"
-                onClick={()=>handleDetail(id)}
+                onClick={()=>{
+                  handleDetail(id);
+                  openModal(id);
+                }}
                 >
                   <Link to="/details">
                     <img className="card-img-top" src={img} alt=""/>
